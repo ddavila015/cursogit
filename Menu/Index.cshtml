@@ -1,0 +1,335 @@
+﻿<blockquote>
+    <br />
+    <br />
+    <br />
+    <div class="content">
+        <ul id="sdt_menu" class="sdt_menu">
+            <li>
+                <a href="#">
+                    <img src="@Url.Content("./Content/images/MenuImages/1Blu.png")" alt="" />
+                    <span class="sdt_active"></span><span class="sdt_wrap">
+                        <span class="sdt_link">
+                            Guías
+                            Paqueteo
+                        </span> <span class="sdt_descr">Gestion de guias</span>
+                    </span>
+                </a>
+                <div class="sdt_box">
+                    @Html.ActionLink("Buscar Guias", "../Guias/Buscar", new { update = false })
+                    @if (!Roles.IsUserInRole("ClienteGTS"))
+                    {
+                        @Html.ActionLink("Imprimir", "ImprimirGuia", "Guias")
+                        @Html.ActionLink("Entregadas", "QryGuiasEntregas", "GuiasEntregas")
+                        @Html.ActionLink("Problemas", "QryGuiasProblemas", "GuiasEntregas")
+                        @Html.ActionLink("StickerSorter", "StickerAlmacenamiento", "Report")
+                        @Html.ActionLink("ImprimirDocumentos", "printdetallada", "Report")
+                        @Html.ActionLink("Rotulos", "Rotulos", "Report")
+                    }
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="@Url.Content("./Content/images/MenuImages/2Blu.png")" alt="" />
+                    <span class="sdt_active"></span><span class="sdt_wrap">
+                        <span class="sdt_link">
+                            Remesa
+                            Masivo
+                        </span> <span class="sdt_descr">Gestion Remesas</span>
+                    </span>
+                </a>
+                @if (!Roles.IsUserInRole("ClienteGTS"))
+                {
+                    <div class="sdt_box">
+                        @Html.ActionLink("Remesa Masivo", "Buscar", "RemesaMasivo")
+                        @Html.ActionLink("Cargar Documentos", "UploadImgRemesa", "RemesaMasivo")
+                        @Html.ActionLink("Consulta Masiva", "ConsultaMasiva", "RemesaMasivo")
+                        @Html.ActionLink("Consulta Documentos", "FileDocumento", "FacturasGP")
+                    </div>
+                }
+            </li>
+            <li>
+                <a href="#">
+                    <img src="@Url.Content("./Content/images/MenuImages/3Blu.png")" alt="" />
+                    <span class="sdt_active"></span><span class="sdt_wrap">
+                        <span class="sdt_link">Exxe Report</span>
+                        <span class="sdt_descr">Reportes</span>
+                    </span>
+                </a>
+                @if (!Roles.IsUserInRole("ClienteGTS"))
+                {
+                    <div class="sdt_box">
+                        @Html.ActionLink("Exxe Reports", "Index", "ExxeReports")
+                    </div>
+                }
+            </li>
+            <li>
+                <a href="#">
+                    <img src="@Url.Content("./Content/images/MenuImages/4Blu.png")" alt="" />
+                    <span class="sdt_active"></span><span class="sdt_wrap">
+                        <span class="sdt_link">Informes</span>
+                        <span class="sdt_descr">Informes</span>
+                    </span>
+                </a>
+                @if (!Roles.IsUserInRole("ClienteGTS"))
+                {
+                    <div class="sdt_box">
+                        @Html.ActionLink("Reportes", "Index", "Report")
+                    </div>
+                }
+            </li>
+            <li>
+                <a href="#">
+                    <img src="@Url.Content("./Content/images/MenuImages/5Blu.png")" alt="" />
+                    <span class="sdt_active"></span><span class="sdt_wrap">
+                        <span class="sdt_link">
+                            Registro
+                            de CRM
+                        </span> <span class="sdt_descr">CRM</span>
+                    </span>
+                </a>
+                @if (!Roles.IsUserInRole("ClienteGTS"))
+                {
+                    <div class="sdt_box">
+                        @Html.ActionLink("Registrar", "RegisterCRM", "CRM")
+                        @Html.ActionLink("Ver detalle", "CRMDetail", "CRM")
+                        @Html.ActionLink("Destinatarios Fletes", "DetalleDestinatariosFletes", "DestinatariosFletes")
+                    </div>
+                }
+            </li>
+        </ul>
+    </div>
+    <img style="display: -webkit-box;" src="@Url.Content("./Content/images/MenuImages/CentroBlu.jpg")" />
+    <div class="content">
+        <ul id="sdt_menu2" class="sdt_menu">
+            <li>
+                <a href="#">
+                    <img src="@Url.Content("./Content/images/MenuImages/6Blu.png")" alt="" />
+                    <span class="sdt_active"></span><span class="sdt_wrap">
+                        <span class="sdt_link">
+                            Elaborar
+                            Guías
+                        </span> <span class="sdt_descr">Guías</span>
+                    </span>
+                </a>
+                <div class="sdt_box">
+                    @Html.ActionLink("Crear Guias", "../Guias/CreateNew")
+                    @Html.ActionLink("Cargue de Guias", "../CargadorGuias/")
+                    @Html.ActionLink("Almacenamiento", "../Guias/ConsultaAlmacenamiento")
+                    @Html.ActionLink("Crear Guias Fletes", "../Guias/FletesPagos/")
+                    @Html.ActionLink("Cargue de Guias Fletes", "../CargadorGuias/IndexFP/")
+                    @Html.ActionLink("Relación de Despacho", "Index", "RDespacho")
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="@Url.Content("./Content/images/MenuImages/7Blu.png")" alt="" />
+                    <span class="sdt_active"></span><span class="sdt_wrap">
+                        <span class="sdt_link">
+                            Programar
+                            Devolución
+                        </span> <span class="sdt_descr">Devoluciones</span>
+                    </span>
+                </a>
+                @if (!Roles.IsUserInRole("ClienteGTS"))
+                {
+                    <div class="sdt_box">
+                        @Html.ActionLink("Crear Devoluciones", "../Guias/Create", new { tipo = "1" })
+                        @Html.ActionLink("Consulta Planilla", "ConsultaPlanilla", "Terminal")
+                    </div>
+                }
+            </li>
+            <li>
+                <a href="#">
+                    <img src="@Url.Content("./Content/images/MenuImages/8Blu.png")" alt="" />
+                    <span class="sdt_active"></span><span class="sdt_wrap">
+                        <span class="sdt_link">
+                            Programar
+                            Recogida
+                        </span> <span class="sdt_descr">Recogida</span>
+                    </span>
+                </a>
+                @if (!Roles.IsUserInRole("ClienteGTS"))
+                {
+                    <div class="sdt_box">
+                        @if (Roles.IsUserInRole("Consulta de planillas de despacho") || Roles.IsUserInRole("Planeador"))
+                        {
+                            @Html.ActionLink("Consulta de planillas", "Index", "PlanillaDespacho")
+                        }
+                        @Html.ActionLink("Consulta de OC", "Index", "OrdenCargue")
+                        @if (Roles.IsUserInRole("Administrator"))
+                        {
+                            @Html.ActionLink("Creación de OC", "Create", "OrdenCargue")
+                        }
+                        @Html.ActionLink("Despacho Guia", "ModificarGuia", "Guias")
+                    </div>
+                }
+            </li>
+            <li>
+                <a href="#">
+                    <img src="@Url.Content("./Content/images/MenuImages/10Blu.png")" alt="" />
+                    <span class="sdt_active"></span><span class="sdt_wrap">
+                        <span class="sdt_link">Facturación</span>
+                        <span class="sdt_descr">Facturación</span>
+                    </span>
+                </a>
+                <div class="sdt_box">
+                    @Html.ActionLink("Facturas Clientes", "QryFacturasGP", "FacturasGP")
+                    @if (!Roles.IsUserInRole("ClienteGTS"))
+                    {
+                        @Html.ActionLink("Fletes Pagos GP", "PendientesGP", "FacturasGP")
+                        @Html.ActionLink("Fletes Pagos Cierre", "ConsultaCierre", "Terminal")
+                        @Html.ActionLink("Cierre Manual", "CierreManual", "Terminal")
+                        @Html.ActionLink("Fletes Pagos Reporte", "ConsultaFacturaFP", "Terminal")
+                        @Html.ActionLink("Permisos Chequera", "Index", "PermisosChequera")
+                        @Html.ActionLink("Lista de Correo", "ListCorreo", "Terminal")
+                    }
+                </div>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="@Url.Content("./Content/images/MenuImages/9blu.png")" alt="" />
+                    <span class="sdt_active"></span><span class="sdt_wrap">
+                        <span class="sdt_link">Seguridad</span>
+                        <span class="sdt_descr">Seguridad</span>
+                    </span>
+                </a>
+                <div class="sdt_box">
+                    @if (Roles.IsUserInRole("Administrator"))
+                    {
+                        @Html.ActionLink("Permisos", "Index", "Admin/AppRolePermissions")
+                        @Html.ActionLink("Usuarios", "ManageAccounts", "Account")
+                        @Html.ActionLink("Permisos CEDIS", "../Admin/PermisosCEDIS/IndexPermisos")
+                        @Html.ActionLink("Motor Tareas", "../BatchTasks/")
+                    }
+                    @Html.ActionLink("Terminales", "../Terminal/")
+                </div>
+            </li>
+        </ul>
+    </div>
+</blockquote>
+
+@{
+    var usuario = Solex.Models.Facade.AccountFacade.GetCurrentUser();
+    ViewBag.Usuario = usuario.Login;
+    ViewBag.Password = usuario.Password;
+}
+
+<form name="frmExxeReports" method="post" action="https://alertran.blulogistics.net/gts/loginParam.seam" target="ventanaForm">
+    <table style="display: none;">
+        <tr>
+            <td>
+                <input type="hidden" name="pusuario" id="pusuario" value="@ViewBag.Usuario" />
+                <input type="hidden" name="ppassword" id="ppassword" value="@ViewBag.Password" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+@section styles{
+    <link rel="stylesheet" href="@Url.Style("MenuStyle")">
+    <style>
+        span.reference {
+            position: fixed;
+            left: 10px;
+            bottom: 10px;
+            font-size: 12px;
+        }
+
+            span.reference a {
+                color: #85C219;
+                text-transform: uppercase;
+                text-decoration: none;
+                text-shadow: 1px 1px 1px #000;
+                margin-right: 30px;
+            }
+
+                span.reference a:hover {
+                    color: #6ABA1F;
+                }
+
+        h1.title {
+            text-indent: -9000px;
+            background: #D1EDD4;
+            width: 633px;
+            height: 69px;
+        }
+    </style>
+}
+
+<!-- The JavaScript -->
+@section scripts{
+    head.js('@Url.Script("jquery.easing.1.3")');
+}
+
+<script type="text/javascript">
+    $(function () {
+        /**
+        * for each menu element, on mouseenter,
+        * we enlarge the image, and show both sdt_active span and
+        * sdt_wrap span. If the element has a sub menu (sdt_box),
+        * then we slide it - if the element is the last one in the menu
+        * we slide it to the left, otherwise to the right
+        */
+        $('#sdt_menu > li, #sdt_menu2 > li').bind('mouseenter', function () {
+            var $elem = $(this);
+            $elem.find('img').css('z-index', '10000');
+            $elem.find('img')
+                .stop(true)
+                .animate({
+                    'width': '170px',
+                    'height': '140px',
+                    'left': '0px'
+                }, 400, 'easeOutBack')
+                .andSelf()
+                .find('.sdt_wrap')
+                .stop(true)
+                .animate({ 'top': '135px' }, 500, 'easeOutBack')
+                .andSelf()
+                .find('.sdt_active')
+                .stop(true)
+                .animate({ 'height': '165' }, 300, function () {
+                    var $sub_menu = $elem.find('.sdt_box');
+                    $sub_menu.css('height', '165px');
+                    if ($sub_menu.length) {
+                        var left = '165px';
+                        if ($elem.parent().children().length == $elem.index() + 1)
+                            left = '-165px';
+                        $sub_menu.show().animate({ 'left': left }, 200);
+                    }
+                });
+        }).bind('mouseleave', function () {
+            var $elem = $(this);
+            var $sub_menu = $elem.find('.sdt_box');
+            if ($sub_menu.length)
+                $sub_menu.hide().css('left', '0px');
+
+            $elem.find('.sdt_active')
+                .stop(true)
+                .animate({ 'height': '0px' }, 300)
+                .andSelf().find('img')
+                .stop(true)
+                .animate({
+                    'width': '0px',
+                    'height': '0px',
+                    'left': '85px'
+                }, 400)
+                .andSelf()
+                .find('.sdt_wrap')
+                .stop(true)
+                .animate({ 'top': '25px' }, 500);
+        });
+    });
+</script>
